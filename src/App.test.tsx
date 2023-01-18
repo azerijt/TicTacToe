@@ -4,6 +4,6 @@ import App from "./App";
 
 test("renders greeting", () => {
   render(<App />);
-  const soughtElement = screen.getByText(/Hello, World!/i);
+  const soughtElement = screen.getByText(/TicTacToe/i);
   expect(soughtElement).toBeInTheDocument();
 });
