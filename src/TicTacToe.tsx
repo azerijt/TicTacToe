@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 
-interface SquareProps {
-  value: string | null;
-  onClick: () => void;
-}
-
-const Square: React.FC<SquareProps> = ({ value, onClick }) => {
-  return (
-    <button className="square" onClick={onClick}>
-      {value}
-    </button>
-  );
-}
-
-
 const TicTacToe = () => {
-  const [board, setBoard] = useState<(string | null)[]>(Array.from({ length: 9 }, () => null));
+  const [board, setBoard] = useState<(string | null)[]>(
+    Array.from({ length: 9 }, () => null)
+  );
   const [isXNext, setIsXNext] = useState<boolean>(true);
-  const [winner, setWinner] = useState<string | 'tie' | null>(null);
+  const [winner, setWinner] = useState<string | "tie" | null>(null);
 
   const handleClick = (index: number) => {
     if (winner) {
@@ -104,6 +92,6 @@ const TicTacToe = () => {
       </div>
     </div>
   );
-}
+};
 
 export default TicTacToe;
